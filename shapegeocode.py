@@ -58,7 +58,7 @@ class geocoder:
 		from math import cos, sqrt, radians
 		
 		if max_dist > 0:	
-			global_min_dist = sys.maxint
+			global_min_dist = sys.maxsize
 			globel_nearest_ll = None
 			nearest_poly = -1
 			
@@ -101,8 +101,8 @@ def _shape_to_polygon(shp):
 	parts = shp.parts
 	parts.append(len(shp.points))
 	poly = []
-	xrange = (sys.maxint, sys.maxint*-1)
-	yrange = (sys.maxint, sys.maxint*-1)
+	xrange = (sys.maxsize, sys.maxsize*-1)
+	yrange = (sys.maxsize, sys.maxsize*-1)
 	for j in range(len(parts)-1):
 		pts = []
 		for k in range(parts[j], parts[j+1]):
